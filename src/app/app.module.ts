@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeroComponent } from './hero/hero.component';
 import { FeaturesComponent } from './features/features.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FeaturesComponent } from './features/features.component';
     HeaderComponent,
     FooterComponent,
     HeroComponent,
-    FeaturesComponent
+    FeaturesComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes)
