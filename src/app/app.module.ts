@@ -13,6 +13,8 @@ import { HeroComponent } from './hero/hero.component';
 import { FeaturesComponent } from './features/features.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginareaComponent } from './loginarea/loginarea.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SignupComponent } from './signup/signup.component';
     HeroComponent,
     FeaturesComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    LoginareaComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes)
