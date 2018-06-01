@@ -6,5 +6,5 @@ import { HomepageComponent } from './homepage/homepage.component';
 export const appRoutes: Routes = [
     { path: '', component: HomepageComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'registro', component: SignupComponent}
+    { path: 'signup', component: SignupComponent}
 ];
