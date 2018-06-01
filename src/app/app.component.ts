@@ -11,5 +11,6 @@ export class AppComponent {
   ngOnInit() {
     localStorage.setItem('codClase', 'FLROED1478');
     localStorage.setItem('codAlumno', 'FLROFA5678');
+    localStorage.setItem('ruta','homepage');
   }
 }

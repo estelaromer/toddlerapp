@@ -8,12 +8,14 @@ import { Router } from '@angular/router';
 })
 export class LoginareaComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+  }
 
   handleLoginArea() {
     this.router.navigate(['login']);
   }
   ngOnInit() {
+
   }
 
 }

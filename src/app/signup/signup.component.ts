@@ -36,6 +36,11 @@ export class SignupComponent implements OnInit {
     }
   }
 
+  handleSignupSubmit(pValues) {
+    //registrarUsuario
+    this.router.navigate(['../login']);
+  }
+
   ngOnInit() {
     switch(localStorage.getItem('tipoUsuario')) {
       case 'educadores':
