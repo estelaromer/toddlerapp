@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  ngOnInit() {
+    localStorage.setItem('codClase', 'FLROED1478');
+    localStorage.setItem('codAlumno', 'FLROFA5678');
+  }
 }

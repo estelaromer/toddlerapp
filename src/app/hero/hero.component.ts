@@ -11,10 +11,11 @@ export class HeroComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    
   }
 
   handleSignup(pUsuario) {
-    localStorage.setItem('tipoRegistro', pUsuario);
+    localStorage.setItem('tipoUsuario', pUsuario);
     this.router.navigate(['signup']);
   }
 
