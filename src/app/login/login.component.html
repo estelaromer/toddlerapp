@@ -1,3 +1,34 @@
-<p>
-  login works!
-</p>
+<!--<div class="container-fluid">
+  <div class="row">
+    <div class="fondoimagen col-sm-12 col-lg-6"></div>
+    <div class="fondocolor col-sm-12 col-lg-6">
+      <div class="formulario container">
+        <div class="formulario-wrapper">
+          <h1 class="text-center">Toddler</h1>
+          <div class="intro text-center">
+            <h2>Inicio de sesión en Toddler</h2>
+            <p>
+              <a>¿Aún no tienes cuenta? Crea una ahora.</a>
+            </p>
+          </div>
+
+          <form [formGroup]="formLogin" (ngSubmit)="handleSubmitLogin(formLogin.value)">
+            <div class="form-group">
+              <input type="email" class="form-control form-control-sm" name="correo" formControlName="correo" placeholder="Correo electrónico"
+              />
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control form-control-sm" name="contrasena" formControlName="contrasena" placeholder="Contraseña"
+              />
+            </div>
+            <input type="submit" class="btn btn-link btn-block" value="Entrar" [disabled]="!formLogin.valid" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>-->
+
+
