@@ -14,7 +14,6 @@ import { FeaturesComponent } from './features/features.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginareaComponent } from './loginarea/loginarea.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { MainappComponent } from './mainapp/mainapp.component';
 import { AccountComponent } from './account/account.component';
 import { NewComponent } from './new/new.component';
@@ -32,7 +31,6 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     SignupComponent,
     LoginareaComponent,
-    TestimonialsComponent,
     MainappComponent,
     AccountComponent,
     NewComponent,
