@@ -16,6 +16,10 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginareaComponent } from './loginarea/loginarea.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { MainappComponent } from './mainapp/mainapp.component';
+import { AccountComponent } from './account/account.component';
+import { NewComponent } from './new/new.component';
+import { ApphomeComponent } from './apphome/apphome.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { MainappComponent } from './mainapp/mainapp.component';
     SignupComponent,
     LoginareaComponent,
     TestimonialsComponent,
-    MainappComponent
+    MainappComponent,
+    AccountComponent,
+    NewComponent,
+    ApphomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes)
