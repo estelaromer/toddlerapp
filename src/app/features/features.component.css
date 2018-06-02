@@ -1,8 +1,20 @@
-.icono{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.caracteristicas{
+    padding-bottom: 100px;
 }
 
-.texto{
+.caracteristicas .icono{
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: #45322E;
+}
+
+.caracteristicas .texto{
+    font-family: 'Lato', sans-serif;
+    color: #45322E;
+}
+
+.caracteristicas h3{
+    font-family: 'Pangolin', sans-serif;
+    padding: 20px 0;
+    color: #45322E;
 }
