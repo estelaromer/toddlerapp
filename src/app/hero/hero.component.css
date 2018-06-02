@@ -1,0 +1,10 @@
+.hero{
+    background-image: url('../../assets/img/hero.jpg');
+    background-size: cover;
+    background-position: top;
+}
+
+.caja{
+    margin: 20% 0;
+    border: 1px solid red;
+}

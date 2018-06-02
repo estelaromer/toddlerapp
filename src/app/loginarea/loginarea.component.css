@@ -1,0 +1,14 @@
+.loginarea{
+    font-family: 'Pangolin', cursive, sans-serif;
+}
+
+.loginarea-button{
+    border-color: #45322E;
+    color: #45322E;
+}
+
+.loginarea-button:hover{
+    background-color: #45322E;
+    color: #fff;
+    border-color: #fff;
+}
