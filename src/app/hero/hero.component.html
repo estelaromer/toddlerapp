@@ -1,0 +1,18 @@
+<div class="hero jumbotron jumbotron-fluid">
+    <div class="caja container">
+      <div class="texto w-50 text-center">
+        <h2 class="d-none">Registro</h2>
+        <h3>La tranquilidad de saber que están bien.</h3>
+        <h4>Crea tu cuenta gratuita.</h4>
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <label class="botonUsuario btn btn-outline-primary mr-2" (click)="handleSignup('educadores')">
+              <input type="radio" name="tipoUsuario" value="educador">Educadores
+            </label>
+            <label class="botonUsuario btn btn-outline-primary" (click)="handleSignup('familiares')">
+              <input type="radio" name="tipoUsuario" value="familiar">Familiares
+            </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>

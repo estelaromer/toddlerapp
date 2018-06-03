@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <app-header></app-header>
+  <main>
+    <div class="nuevoAlumno container">
+      <form novalidate [formGroup]="newForm" (ngSubmit)="handleNewSubmit(newForm.value)">
+        <div class="form-row">
+          <div class="col-12 col-md-6">
+            <div class="form-group">
+              <div class="baby-pic-container"><img class="baby-pic" src="https://thumb7.shutterstock.com/display_pic_with_logo/189033094/1019597614/stock-photo-default-male-and-female-avatar-profile-picture-icon-baby-default-placeholder-children-avatar-1019597614.jpg" alt=""></div>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="form-group">
+              <label>Nombre*</label>
+              <input type="text" class="form-control form-control-sm" formControlName="nombre" placeholder="Nombre">
+              <small class="error text-left" *ngIf="newForm.controls.nombre.errors?.required && newForm.controls.nombre.dirty">Campo obligatorio</small>
+            </div>
+
+            <div class="form-group">
+              <label>Apellidos*</label>
+              <input type="text" class="form-control form-control-sm" formControlName="apellidos" placeholder="Apellidos">
+              <small class="error text-left" *ngIf="newForm.controls.apellidos.errors?.required && newForm.controls.apellidos.dirty">Campo obligatorio</small>
+            </div>
+
+            <div class="form-group">
+              <label>Fecha de nacimiento*</label>
+              <input type="date" class="form-control form-control-sm" formComtrolName="fechaNacimiento">
+            </div>
+
+            <div class="row">
+              <div class="form-group col-6">
+                <label>Entrada*</label>
+                <input type="time" class="form-control form-control-sm" formComtrolName="horaEntrada">
+              </div>
+              <div class="form-group col-6">
+                  <label>Salida*</label>
+                  <input type="time" class="form-control form-control-sm" formComtrolName="horaSalida">
+                </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!newForm.valid">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <app-header></app-header>
+  <div class="row">
+    <div class="fondo col-12 col-md-6"></div>
+    <div class="col-12 col-md-6">
+      <div class="formulario container">
+        <div class="formulario-wrapper">
+          <h1 class="text-center">Toddler</h1>
+          <div class="intro text-center">
+            <h2>Inicio de sesión en Toddler</h2>
+            <p>
+              <a [routerLink]="['../signup']">¿Aún no tienes cuenta? Crea una ahora.</a>
+            </p>
+          </div>
+
+          <form [formGroup]="loginForm" (ngSubmit)="handleSubmitLogin(loginForm.value)">
+            <div class="form-group">
+              <label>Correo*</label>
+              <input type="email" class="form-control form-control-sm" formControlName="correo" placeholder="Correo electrónico">
+              <small class="error text-left" *ngIf="loginForm.controls.correo.errors?.required && loginForm.controls.correo.dirty">
+                  Campo obligatorio</small>
+              <small class="error text-left" *ngIf="loginForm.controls.correo.errors?.pattern && loginForm.controls.correo.touched">
+                  Dirección de correo no válida</small>
+            </div>
+            <div class="form-group">
+              <label>Contraseña*</label>
+              <input type="password" class="form-control form-control-sm" formControlName="contrasena" placeholder="Contraseña">
+              <small class="error text-left" *ngIf="loginForm.controls.contrasena.errors?.required && loginForm.controls.contrasena.dirty">
+                  Campo obligatorio</small>
+            </div>
+            <input type="submit" class="btn btn-primary btn-block" value="Entrar" [disabled]="!loginForm.valid" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+<router-outlet></router-outlet>
+
+

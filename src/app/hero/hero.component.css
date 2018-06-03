@@ -1,0 +1,107 @@
+.hero{
+    background-image: url('../../assets/img/hero.jpg');
+    background-size: cover;
+    background-position: top;
+}
+
+.caja{
+    margin-top: 5%;
+    margin-bottom: 35%;
+}
+
+.texto{
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    color: #fff;
+    padding-top: 10%;
+}
+
+.texto h3 {
+    font-size: 1rem;
+    padding-bottom: 10px;
+}
+
+.texto h4 {
+    font-size: 0.8rem;
+    padding-bottom: 10px;
+}
+
+.botonUsuario {
+    font-size: 0.5rem;
+    border-color: #fff;
+    color: #fff;
+}
+
+.botonUsuario:hover{
+    background-color: #45322E;
+}
+
+@media screen and (min-width: 465px) {
+    .texto h3 {
+        font-size: 1.2rem;
+    }
+    
+    .texto h4 {
+        font-size: 1rem;
+    }
+    
+    .botonUsuario {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .texto h3 {
+        font-size: 1.4rem;
+    }
+    
+    .texto h4 {
+        font-size: 1.2rem;
+    }
+    
+    .botonUsuario {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .texto h3 {
+        font-size: 1.6rem;
+    }
+    
+    .texto h4 {
+        font-size: 1.4rem;
+    }
+    
+    .botonUsuario {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .texto h3 {
+        font-size: 1.8rem;
+    }
+    
+    .texto h4 {
+        font-size: 1.6rem;
+    }
+    
+    .botonUsuario {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .texto h3 {
+        font-size: 2rem;
+    }
+    
+    .texto h4 {
+        font-size: 1.8rem;
+    }
+    
+    .botonUsuario {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,79 @@
+<div class="signup container-fluid">
+  <app-header></app-header>
+  <div class="row">
+    <div class="fondo col-12 col-md-6"></div>
+    <div class="contenido col-12 col-md-6">
+        <div class="text-center">
+            <h2>Registro en Toddler</h2>
+            <h3>Crea tu cuenta. Es gratuita.</h3>
+            <small>¿Ya estás registrado? <a [routerLink] = "['../login']">Inicia sesión aquí.</a></small>
+          </div>
+        
+          <form novalidate [formGroup]="signupForm" (ngSubmit)="handleSignupSubmit(signupForm.value)">
+            <div class="form-row">
+                <div class="form-group col-12 col-sm-6">
+                    <label>Código de {{tipoCodigo}}*</label>
+                    <input type="text" class="form-control form-control-sm" formControlName="codigo" placeholder="Código">
+                    <small>Para esta demo, usa el código {{codigoDemo}}</small>
+                  </div>
+            </div>
+        
+            <div class="form-row">
+              <div class="form-group col-12 col-sm-6">
+                <label>Nombre*</label>
+                <input type="text" class="form-control form-control-sm" formControlName="nombre" placeholder="Nombre">
+                <small class="error text-left" *ngIf="signupForm.controls.nombre.errors?.required && signupForm.controls.nombre.dirty">Campo obligatorio</small>
+        
+              </div>
+              <div class="form-group col-12 col-sm-6">
+                <label>Apellidos*</label>
+                <input type="text" class="form-control form-control-sm" formControlName="apellidos" placeholder="Apellidos">
+                <small class="error text-left" *ngIf="signupForm.controls.apellidos.errors?.required && signupForm.controls.apellidos.dirty">Campo obligatorio</small>
+              </div>
+            </div>
+        
+            <div class="form-row">
+              <div class="form-group col-12 col-sm-6">
+                <label>Correo*</label>
+                <input type="email" class="form-control form-control-sm" formControlName="correo" placeholder="Correo electrónico">
+                <small class="error text-left" *ngIf="signupForm.controls.correo.errors?.required && signupForm.controls.correo.dirty">
+                  Campo obligatorio</small>
+                <small class="error text-left" *ngIf="signupForm.controls.correo.errors?.pattern && signupForm.controls.correo.touched">
+                  Dirección de correo no válida</small>
+        
+              </div>
+              <div class="form-group col-12 col-sm-6">
+                <label>Teléfono*</label>
+                <input type="tel" class="form-control form-control-sm" formControlName="telefono" placeholder="Número de teléfono">
+                <small class="error text-left" *ngIf="signupForm.controls.telefono.errors?.required && signupForm.controls.telefono.dirty">
+                  Campo obligatorio</small>
+                <small class="error text-left" *ngIf="(signupForm.controls.telefono.errors?.minlength || signupForm.controls.telefono.errors?.maxlength) && signupForm.controls.telefono.touched">
+        
+                  Número inválido</small>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-12 col-sm-6">
+                <label>Contraseña*</label>
+                <input type="password" class="form-control form-control-sm" formControlName="contrasena" placeholder="Contraseña">
+                <small class="error text-left" *ngIf="signupForm.controls.contrasena.errors?.required && signupForm.controls.contrasena.dirty">
+                  Campo obligatorio</small>
+                <small class="error text-left" *ngIf="signupForm.controls.contrasena.errors?.pattern && signupForm.controls.contrasena.dirty">
+                  Mínimo 8 caracteres. Al menos una mayúscula, una minúscula o un dígito.</small>
+              </div>
+              <div class="form-group col-12 col-sm-6">
+                <label>Repetir contraseña*</label>
+                <input type="password" class="form-control form-control-sm" formControlName="contrasenaRepeat" placeholder="Contraseña">
+                <small class="error text-left" *ngIf="signupForm.controls.contrasenaRepeat.errors?.required && signupForm.controls.contrasenaRepeat.dirty">
+                  Campo obligatorio</small>
+                <small *ngIf="(signupForm.controls.contrasena.value !== signupForm.controls.contrasenaRepeat.value)&&signupForm.controls.contrasena.touched">
+                  Las contraseñas no coinciden</small>
+        
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="!signupForm.valid">Regístrate</button>
+          </form>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

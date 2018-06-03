@@ -1,0 +1,27 @@
+.loginarea{
+    font-family: 'Pangolin', cursive, sans-serif;
+}
+
+.loginarea-button{
+    border-color: #45322E;
+    color: #45322E;
+}
+
+.loginarea-button:hover{
+    background-color: #45322E;
+    color: #fff;
+    border-color: #fff;
+}
+
+.nav-profile-pic{
+    width: 37px;
+    height: 37px;
+    border: 1px solid #45322E;
+    border-radius: 5px;
+}
+
+.loginarea-bell{
+    border:none;
+    color: #45322E;
+    margin-right: 50px;
+}
