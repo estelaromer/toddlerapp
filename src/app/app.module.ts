@@ -19,6 +19,7 @@ import { AccountComponent } from './account/account.component';
 import { NewComponent } from './new/new.component';
 import { ApphomeComponent } from './apphome/apphome.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes), HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

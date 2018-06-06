@@ -2,11 +2,45 @@
     margin-top: 100px;
 }
 .baby-pic-container{
-    border: 2px solid #000;
     width: 100px;
     height: 100px;;
 }
 .baby-pic{
     width: 100px;
     height: 100px;
+}
+
+.formulario-wrapper{
+    padding: 30px 80px;
+    border: 1px solid #45322E;
+    border-radius: 5px;
+}
+
+.formulario-nuevo label{
+    font-family: 'Lato', sans-serif;
+    color: #45322E;
+}
+.formulario-nuevo .input{
+    border: none;
+    border-bottom: 1px solid #4E668F;
+    border-radius: 0;
+}
+
+.formulario-nuevo .input:focus{
+    box-shadow: none;
+    border-bottom: 2px solid #38674D;
+}
+
+h1{
+    display: none;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+.intro{
+    font-family: 'Pangolin', sans-serif;
+    color: #45322E;
+    margin-bottom: 50px;
 }

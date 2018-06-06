@@ -2,21 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'; 
 import { debounceTime, distinctUntilChanged  } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
+  providers: [UsersService]
 })
 export class SignupComponent implements OnInit {
 
-  tipoCodigo: string;
-  codigoDemo: string;
   signupForm: FormGroup;
 
-  constructor(private router: Router) { 
+  constructor(private router: Router, private usersService: UsersService) { 
     this.signupForm = new FormGroup({
-      codigo: new FormControl('', Validators.required),
       nombre: new FormControl('', Validators.required),
       apellidos: new FormControl('', Validators.required),
       correo: new FormControl('', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]),
@@ -27,31 +26,16 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  codigoValidator(control) {
-    console.log(this.codigoDemo);
-    if (control.value === this.codigoDemo) {
-      return null;
-    } else {
-      return {'error': 'Los códigos no coinciden'};
-    }
-  }
 
   handleSignupSubmit(pValues) {
-    //registrarUsuario
+    let subruta = localStorage.getItem('tipoUsuario');
+    this.usersService.nuevoUsuario(pValues, subruta);
     this.router.navigate(['../login']);
   }
 
   ngOnInit() {
-    switch(localStorage.getItem('tipoUsuario')) {
-      case 'educadores':
-        this.tipoCodigo = 'clase';
-        this.codigoDemo = localStorage.getItem('codClase');
-        break;
-      case 'familiares':
-        this.tipoCodigo = 'alumno';
-        this.codigoDemo = localStorage.getItem('codAlumno');
-        break;
-    }
+
+    
   }
 
 }

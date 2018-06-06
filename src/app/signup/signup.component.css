@@ -1,4 +1,60 @@
 .fondo{
     background-image: url('../../assets/img/abaco.jpg');
     background-size: cover;
+    background-position: center;
+}
+
+.formulario-wrapper{
+    margin-top: 60px;
+    padding: 30px 50px;
+    border: 1px solid #45322E;
+    border-radius: 5px;
+}
+
+.formulario-signup label{
+    font-family: 'Lato', sans-serif;
+    color: #45322E;
+}
+.formulario-signup .input{
+    border: none;
+    border-bottom: 1px solid #4E668F;
+    border-radius: 0;
+}
+
+.formulario-signup .input:focus{
+    box-shadow: none;
+    border-bottom: 2px solid #38674D;
+}
+
+h1{
+    display: none;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+.intro{
+    font-family: 'Pangolin', sans-serif;
+    color: #45322E;
+    margin-bottom: 10px;
+}
+
+.intro a{
+    color: #4E668F;
+    font-size: 0.9rem;
+}
+
+.intro a:hover{
+    text-decoration: none;
+    color: #38674D;
+}
+
+@media screen and (min-width: 992px) {
+    h2{
+        font-size: 1.8rem;
+    }
+    .intro a{
+        font-size: 1.2rem;
+    }
 }

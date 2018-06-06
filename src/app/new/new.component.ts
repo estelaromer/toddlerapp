@@ -25,6 +25,7 @@ export class NewComponent implements OnInit {
 
   handleNewSubmit(pdatos) {
     this.router.navigate(['../app/home']);
+    console.log(pdatos);
   }
   ngOnInit() {
   }

@@ -21,6 +21,7 @@
 .formulario-login .input{
     border: none;
     border-bottom: 1px solid #4E668F;
+    border-radius: 0;
 }
 
 .formulario-login .input:focus{
