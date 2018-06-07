@@ -14,6 +14,10 @@ export class UsersService {
 
   nuevoUsuario(pdatosRegistro, pruta) {
     this.http.post(`http://localhost:3000/api/${pruta}/create`, {param1: pdatosRegistro}).toPromise().
-    then( res => console.log(res.json()));
+    then(res => console.log(res.json()));
+  }
+
+  validateLogin(pdatosLogin) {
+    return this.http.post('http://localhost:3000/api/loginmatch', pdatosLogin).toPromise();
   }
 }
