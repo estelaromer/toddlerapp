@@ -1,15 +1,12 @@
-<div class="loginarea">
+<div class="loginarea" *ngIf="!isLogged">
   <button class="loginarea-button btn btn-outline-primary" type="submit" (click)="handleLoginArea()">Iniciar sesión</button>
 </div>
 
-<!--<div class="loginarea">
-  <button class="loginarea-button btn btn-outline-primary" type="submit" (click)="handleVolver()">Volver</button>
-</div>
-<router-outlet></router-outlet>
 
 
 
-<div class="loginarea">
+
+<div class="loginarea" *ngIf="isLogged">
     <div class="nav-item dropdown d-inline-block">
         <div class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img class="nav-profile-pic" src="../../assets/img/Profile.jpeg" alt="">
@@ -21,5 +18,5 @@
   <button class="loginarea-bell btn btn-outline-primary" type="submit" (click)="handleLogoutArea()"><i class="fas fa-bell"></i></button>
   <button class="loginarea-button btn btn-outline-primary" type="submit" (click)="handleLogoutArea()"><i class="loginarea-logout fas fa-sign-out-alt"></i></button>
 </div>
-<router-outlet></router-outlet>-->
+<router-outlet></router-outlet>
 

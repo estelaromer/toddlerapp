@@ -3,19 +3,19 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { debounceTime, distinctUntilChanged  } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { UsersService } from '../users.service';
+import { LocalStorageService } from 'angular-2-local-storage';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  providers: [UsersService]
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   noRegistrado: boolean;
   contrasenaIncorrecta: boolean;
-  constructor(private router: Router, private userService: UsersService) { 
+  constructor(private router: Router, private userService: UsersService, private localStorageService: LocalStorageService) { 
     this.noRegistrado = false;
     this.contrasenaIncorrecta = false;
     this.loginForm = new FormGroup({
@@ -36,7 +36,8 @@ export class LoginComponent implements OnInit {
         console.log(this.contrasenaIncorrecta);
       } else {
         console.log(status);
-        this.router.navigate(['/app/account/profile']);
+        this.localStorageService.set('datosLogin', JSON.stringify({usuario: pDatos.tipoLogin, fecha: new Date()}));
+        this.router.navigate(['/app/profile']);
       }
 
     });

@@ -7,14 +7,15 @@ import { UsersService } from '../users.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
-  providers: [UsersService]
+  styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
+  yaRegistrado: boolean;
 
   constructor(private router: Router, private usersService: UsersService) { 
+    this.yaRegistrado = false;
     this.signupForm = new FormGroup({
       nombre: new FormControl('', Validators.required),
       apellidos: new FormControl('', Validators.required),
@@ -29,8 +30,17 @@ export class SignupComponent implements OnInit {
 
   handleSignupSubmit(pValues) {
     let subruta = localStorage.getItem('tipoUsuario');
-    this.usersService.nuevoUsuario(pValues, subruta);
-    this.router.navigate(['../login']);
+    this.usersService.nuevoUsuario(pValues, subruta).
+    then(res => {
+      let status = res.json();
+      if (status.err && status.err === 'Usuario ya registrado') {
+        this.yaRegistrado = true;
+        console.log(this.yaRegistrado);
+      } else {
+        console.log(status);
+        this.router.navigate(['../login']);
+      }
+    })
   }
 
   ngOnInit() {

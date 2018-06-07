@@ -27,6 +27,7 @@
               Campo obligatorio</small>
             <small class="error text-left" *ngIf="signupForm.controls.correo.errors?.pattern && signupForm.controls.correo.touched">
               Dirección de correo no válida</small>
+            <small class="error text-left" *ngIf="yaRegistrado">Ya existe una cuenta asociada a esta dirección de correo electrónico.</small>
           </div>
           <div class="form-group">
             <label>Teléfono*</label>

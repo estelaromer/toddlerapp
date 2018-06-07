@@ -1,6 +1,4 @@
 <div class="container-fluid">
-  <app-header></app-header>
-
   <div class="row">
     <div class="fondo col-12 col-md-6"></div>
 
@@ -30,7 +28,7 @@
               <small class="error text-left" *ngIf="loginForm.controls.correo.errors?.pattern && loginForm.controls.correo.touched">
                 Dirección de correo no válida</small>
               <small class="error text-left" *ngIf="noRegistrado">Esta dirección de correo electrónico no pertenece a ninguna cuenta.</small>
-    
+
             </div>
             <div class="form-group">
               <label>Contraseña*</label>
@@ -45,6 +43,5 @@
       </div>
     </div>
   </div>
-  <app-footer></app-footer>
 </div>
 <router-outlet></router-outlet>
