@@ -1,4 +1,18 @@
 <app-header></app-header>
-<p>
-  profile works!
-</p>
+<div class="profile container-fluid">
+  <div class="row">
+    <div class="col-12 col-sm-3">
+      <div class="profile-pic-placeholder"><img width="100" src="./../../assets/img/profile-placeholder.png" alt=""></div>
+    </div>
+  </div>
+</div>
+
+<ul>
+  <li>{{infoProfile?.Foto}}</li>
+  <li>{{infoProfile?.Nombre}} {{infoProfile?.Apellidos}}</li>
+  <li>{{infoProfile?.Email}}</li>
+  <li>{{infoProfile?.Telefono}}
+  <!--<li>{{infoProfile?.Direccion}}</li>
+  <li>{{infoProfile?.Ciudad}}</li>
+  <li>{{infoProfile?.CodigoPostal}}</li>-->
+</ul>

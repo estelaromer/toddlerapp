@@ -24,7 +24,7 @@ export class LoginareaComponent implements OnInit {
     this.router.navigate([''])
   }
   ngOnInit() {
-  
+    this.isLogged = this.usersService.isLogged();
   }
 
 }

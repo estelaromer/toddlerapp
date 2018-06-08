@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         console.log(this.contrasenaIncorrecta);
       } else {
         console.log(status);
-        this.localStorageService.set('datosLogin', JSON.stringify({usuario: pDatos.tipoLogin, fecha: new Date()}));
+        this.localStorageService.set('datosLogin', JSON.stringify({idUsuario: status.id, usuario: pDatos.tipoLogin, fecha: new Date()}));
         this.router.navigate(['/app/profile']);
       }
 

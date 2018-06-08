@@ -26,5 +26,9 @@ export class UsersService {
     if (datos) return true;
     return false;
   }
+
+  getUserProfile(pId, pUsuario){
+    return this.http.post(`http://localhost:3000/api/fetch/${pId}`, {param1: pUsuario}).toPromise();
+  }
 }
 
