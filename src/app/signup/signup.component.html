@@ -3,68 +3,61 @@
     <div class="fondo col-12 col-md-6">
     </div>
     <div class="contenido col-12 col-md-6">
+      <div class="wrap">
+        <div class="intro text-center">
+          <h1>Toddler</h1>
+          <h2>Registro en Toddler</h2>
+        </div>
+        <div class="signup-form">
+          <form class="formulario-signup" novalidate [formGroup]="signupForm" (ngSubmit)="handleSignupSubmit(signupForm.value)">
+            <div class="form-group">
+              <label>Nombre*</label>
+              <input type="text" class="input form-control form-control-sm" formControlName="nombre" placeholder="Nombre">
+              <small class="error text-left" *ngIf="signupForm.controls.nombre.errors?.required && signupForm.controls.nombre.dirty">Campo obligatorio</small>
+            </div>
+            <div class="form-group">
+              <label>Apellidos*</label>
+              <input type="text" class="input form-control form-control-sm" formControlName="apellidos" placeholder="Apellidos">
+              <small class="error text-left" *ngIf="signupForm.controls.apellidos.errors?.required && signupForm.controls.apellidos.dirty">Campo obligatorio</small>
+            </div>
+            <div class="form-group">
+              <label>Correo*</label>
+              <input type="email" class="input form-control form-control-sm" formControlName="correo" placeholder="Correo electrónico">
+              <small class="error text-left" *ngIf="signupForm.controls.correo.errors?.required && signupForm.controls.correo.dirty">
+                Campo obligatorio</small>
+              <small class="error text-left" *ngIf="signupForm.controls.correo.errors?.pattern && signupForm.controls.correo.touched">
+                Dirección de correo no válida</small>
+              <small class="error text-left" *ngIf="yaRegistrado">Ya existe una cuenta asociada a esta dirección de correo electrónico.</small>
+            </div>
+            <div class="form-group">
+              <label>Teléfono*</label>
+              <input type="tel" class="input form-control form-control-sm" formControlName="telefono" placeholder="Número de teléfono">
+              <small class="error text-left" *ngIf="signupForm.controls.telefono.errors?.required && signupForm.controls.telefono.dirty">
+                Campo obligatorio</small>
+              <small class="error text-left" *ngIf="(signupForm.controls.telefono.errors?.minlength || signupForm.controls.telefono.errors?.maxlength) && signupForm.controls.telefono.touched">
 
-      <div class="intro text-center">
-        <h1>Toddler</h1>
-        <h2>Registro en Toddler</h2>
-      </div>
-      <div class="signup-form">
-        <form class="formulario-signup" novalidate [formGroup]="signupForm" (ngSubmit)="handleSignupSubmit(signupForm.value)">
-          <div class="form-group">
-            <label>Nombre*</label>
-            <input type="text" class="input form-control form-control-sm" formControlName="nombre" placeholder="Nombre">
-            <small class="error text-left" *ngIf="signupForm.controls.nombre.errors?.required && signupForm.controls.nombre.dirty">Campo obligatorio</small>
-          </div>
-          <div class="form-group">
-            <label>Apellidos*</label>
-            <input type="text" class="input form-control form-control-sm" formControlName="apellidos" placeholder="Apellidos">
-            <small class="error text-left" *ngIf="signupForm.controls.apellidos.errors?.required && signupForm.controls.apellidos.dirty">Campo obligatorio</small>
-          </div>
-          <div class="form-group">
-            <label>Correo*</label>
-            <input type="email" class="input form-control form-control-sm" formControlName="correo" placeholder="Correo electrónico">
-            <small class="error text-left" *ngIf="signupForm.controls.correo.errors?.required && signupForm.controls.correo.dirty">
-              Campo obligatorio</small>
-            <small class="error text-left" *ngIf="signupForm.controls.correo.errors?.pattern && signupForm.controls.correo.touched">
-              Dirección de correo no válida</small>
-            <small class="error text-left" *ngIf="yaRegistrado">Ya existe una cuenta asociada a esta dirección de correo electrónico.</small>
-          </div>
-          <div class="form-group">
-            <label>Teléfono*</label>
-            <input type="tel" class="input form-control form-control-sm" formControlName="telefono" placeholder="Número de teléfono">
-            <small class="error text-left" *ngIf="signupForm.controls.telefono.errors?.required && signupForm.controls.telefono.dirty">
-              Campo obligatorio</small>
-            <small class="error text-left" *ngIf="(signupForm.controls.telefono.errors?.minlength || signupForm.controls.telefono.errors?.maxlength) && signupForm.controls.telefono.touched">
-
-              Número inválido</small>
-          </div>
-          <div class="form-group">
-            <label>Contraseña*</label>
-            <input type="password" class="input form-control form-control-sm" formControlName="contrasena" placeholder="Contraseña">
-            <small class="error text-left" *ngIf="signupForm.controls.contrasena.errors?.required && signupForm.controls.contrasena.dirty">
-              Campo obligatorio</small>
-            <small class="error text-left" *ngIf="signupForm.controls.contrasena.errors?.pattern && signupForm.controls.contrasena.dirty">
-              Mínimo 8 caracteres. Al menos una mayúscula, una minúscula o un dígito.</small>
-          </div>
-          <div class="form-group">
-            <label>Repetir contraseña*</label>
-            <input type="password" class="input form-control form-control-sm" formControlName="contrasenaRepeat" placeholder="Contraseña">
-            <small class="error text-left" *ngIf="signupForm.controls.contrasenaRepeat.errors?.required && signupForm.controls.contrasenaRepeat.dirty">
-              Campo obligatorio</small>
-            <small *ngIf="(signupForm.controls.contrasena.value !== signupForm.controls.contrasenaRepeat.value)&&signupForm.controls.contrasena.touched">
-              Las contraseñas no coinciden</small>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block" [disabled]="!signupForm.valid">Regístrate</button>
-        </form>
+                Número inválido</small>
+            </div>
+            <div class="form-group">
+              <label>Contraseña*</label>
+              <input type="password" class="input form-control form-control-sm" formControlName="contrasena" placeholder="Contraseña">
+              <small class="error text-left" *ngIf="signupForm.controls.contrasena.errors?.required && signupForm.controls.contrasena.dirty">
+                Campo obligatorio</small>
+              <small class="error text-left" *ngIf="signupForm.controls.contrasena.errors?.pattern && signupForm.controls.contrasena.dirty">
+                Mínimo 8 caracteres. Al menos una mayúscula, una minúscula o un dígito.</small>
+            </div>
+            <div class="form-group">
+              <label>Repetir contraseña*</label>
+              <input type="password" class="input form-control form-control-sm" formControlName="contrasenaRepeat" placeholder="Contraseña">
+              <small class="error text-left" *ngIf="signupForm.controls.contrasenaRepeat.errors?.required && signupForm.controls.contrasenaRepeat.dirty">
+                Campo obligatorio</small>
+              <small *ngIf="(signupForm.controls.contrasena.value !== signupForm.controls.contrasenaRepeat.value)&&signupForm.controls.contrasena.touched">
+                Las contraseñas no coinciden</small>
+            </div>
+              <input type="submit" class="btn btn-primary btn-signup" [disabled]="!signupForm.valid" value="Crear cuenta">
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-

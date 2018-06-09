@@ -25,6 +25,7 @@ export class LoginareaComponent implements OnInit {
   }
   ngOnInit() {
     this.isLogged = this.usersService.isLogged();
+    console.log(this.isLogged);
   }
 
 }

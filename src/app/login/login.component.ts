@@ -32,10 +32,13 @@ export class LoginComponent implements OnInit {
         this.noRegistrado = true;
         console.log(this.noRegistrado);
       } else if (status.err && status.err === 'Contraseña incorrecta') {
+        this.noRegistrado = false;
         this.contrasenaIncorrecta = true;
         console.log(this.contrasenaIncorrecta);
       } else {
         console.log(status);
+        this.noRegistrado = false;
+        this.contrasenaIncorrecta = false;
         this.localStorageService.set('datosLogin', JSON.stringify({idUsuario: status.id, usuario: pDatos.tipoLogin, fecha: new Date()}));
         this.router.navigate(['/app/profile']);
       }

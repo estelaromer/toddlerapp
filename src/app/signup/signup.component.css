@@ -1,14 +1,26 @@
-.fondo{
+.signup .fondo{
     background-image: url('../../assets/img/abaco.jpg');
     background-size: cover;
     background-position: center;
+    height: 200px;
 }
 
-.formulario-wrapper{
-    margin-top: 60px;
-    padding: 30px 50px;
-    border: 1px solid #45322E;
+.signup .contenido{
+    margin-top: 2px;
+}
+
+.wrap{
+    border: 2px solid #45322E;
+    margin: 20px;
+    padding: 20px 0;
     border-radius: 5px;
+    background-color: #fff;
+}
+
+.formulario-signup{
+    width: 80%;
+    margin: auto;
+    padding: 20px 0 40px 0;
 }
 
 .formulario-signup label{
@@ -48,6 +60,23 @@ h2{
 .intro a:hover{
     text-decoration: none;
     color: #38674D;
+}
+
+.btn-signup{
+    width: 200px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.error{
+    color: #f00;
+}
+
+@media screen and (min-width: 768px){
+    .signup .fondo{
+        height: 100vh;
+    }
 }
 
 @media screen and (min-width: 992px) {

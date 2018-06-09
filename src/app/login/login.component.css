@@ -1,10 +1,8 @@
-.fondo{
+.login .fondo{
     background-image: url('../../assets/img/cubos.jpg');
     background-size: cover;
-}
-
-.login{
-    height: 63vh;
+    background-position: center;
+    height: 200px;
 }
 
 .formulario-wrapper{
@@ -14,6 +12,9 @@
     border-radius: 5px;
 }
 
+.tipo{
+    margin: 20px 0;
+}
 .formulario-login label{
     font-family: 'Lato', sans-serif;
     color: #45322E;
@@ -27,6 +28,10 @@
 .formulario-login .input:focus{
     box-shadow: none;
     border-bottom: 2px solid #38674D;
+}
+
+.error{
+    color: #f00;
 }
 
 h1{
@@ -43,14 +48,17 @@ h2{
     margin-bottom: 10px;
 }
 
-.intro a{
-    color: #4E668F;
-    font-size: 0.9rem;
+.btn-login{
+    width: 100px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 20px;
 }
 
-.intro a:hover{
-    text-decoration: none;
-    color: #38674D;
+@media screen and (min-width: 768px){
+    .login .fondo{
+        height: 100vh;;
+    }
 }
 
 @media screen and (min-width: 992px) {

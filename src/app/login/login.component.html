@@ -1,24 +1,23 @@
-<div class="container-fluid">
+<div class="login container-fluid">
   <div class="row">
     <div class="fondo col-12 col-md-6"></div>
-
     <div class="col-12 col-md-6">
       <div class="login container">
         <div class="formulario-wrapper">
           <h1 class="text-center">Toddler</h1>
           <div class="intro text-center">
             <h2>Inicio de sesión en Toddler</h2>
-            <a [routerLink]="['../signup']">¿Aún no tienes cuenta? Crea una ahora.</a>
           </div>
-
           <form class="formulario-login" [formGroup]="loginForm" (ngSubmit)="handleSubmitLogin(loginForm.value)">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" formControlName="tipoLogin" name="tipoLogin" id="inlineRadio1" value="educadores">
-              <label class="form-check-label" for="inlineRadio1">Educadores</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" formControlName="tipoLogin" name="tipoLogin" id="inlineRadio2" value="familiares">
-              <label class="form-check-label" for="inlineRadio2">Familiares</label>
+            <div class="tipo text-center">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="tipoLogin" name="tipoLogin" id="inlineRadio1" value="educadores">
+                <label class="form-check-label" for="inlineRadio1">Educadores</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="tipoLogin" name="tipoLogin" id="inlineRadio2" value="familiares">
+                <label class="form-check-label" for="inlineRadio2">Familiares</label>
+              </div>
             </div>
             <div class="form-group">
               <label>Correo*</label>
@@ -37,7 +36,7 @@
                 Campo obligatorio</small>
               <small class="error text-left" *ngIf="contrasenaIncorrecta">Contraseña incorrecta</small>
             </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Entrar" [disabled]="!loginForm.valid" />
+            <input type="submit" class="btn btn-primary btn-login" value="Entrar" [disabled]="!loginForm.valid" />
           </form>
         </div>
       </div>
