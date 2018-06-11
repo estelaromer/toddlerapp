@@ -2,17 +2,36 @@
 <div class="profile container-fluid">
   <div class="row">
     <div class="col-12 col-sm-3">
-      <div class="profile-pic-placeholder"><img width="100" src="./../../assets/img/profile-placeholder.png" alt=""></div>
+      <div *ngIf="!infoProfile?.foto" class="profile-pic-placeholder"><img width="100" src="./../../assets/img/profile-placeholder.png" alt=""></div>
+      <div *ngIf="infoProfile?.foto" class="profile-pic-placeholder"><img width="100" src="{{infoProfile?.foto}}" alt=""></div>
     </div>
   </div>
 </div>
 
 <ul>
-  <li>{{infoProfile?.Foto}}</li>
-  <li>{{infoProfile?.Nombre}} {{infoProfile?.Apellidos}}</li>
-  <li>{{infoProfile?.Email}}</li>
-  <li>{{infoProfile?.Telefono}}
-  <!--<li>{{infoProfile?.Direccion}}</li>
-  <li>{{infoProfile?.Ciudad}}</li>
-  <li>{{infoProfile?.CodigoPostal}}</li>-->
+  <li>{{infoProfile?.nombre}} {{infoProfile?.apellidos}}</li>
+  <li>{{infoProfile?.email}}</li>
+  <li>{{infoProfile?.telefono}}
 </ul>
+<div *ngIf="infoProfile?.alumnos">
+    <div *ngFor="let alumno of infoProfile?.alumnos">
+      <ul>
+        <li>{{alumno.nombre}} {{alumno.apellidos}}</li>
+        <li>{{alumno.clase}}</li>
+        <li>{{alumno.centro}}</li>
+      </ul>
+    </div>
+</div>
+
+<div *ngIf="infoProfile?.clases">
+    <div *ngFor="let clase of infoProfile?.clases">
+      <ul>
+        <li>{{clase.clase}}</li>
+        <li>{{clase.centro}}</li>
+      </ul>
+    </div>
+</div>
+
+
+<a *ngIf="datos.usuario === 'familiares'">Añadir alumno</a>
+<a *ngIf="datos.usuario === 'educadores'">Añadir clase</a>

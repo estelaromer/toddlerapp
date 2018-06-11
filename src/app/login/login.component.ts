@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         this.noRegistrado = false;
         this.contrasenaIncorrecta = false;
         this.localStorageService.set('datosLogin', JSON.stringify({idUsuario: status.id, usuario: pDatos.tipoLogin, fecha: new Date()}));
-        this.router.navigate(['/app/profile']);
+        this.router.navigate(['/app']);
       }
 
     });

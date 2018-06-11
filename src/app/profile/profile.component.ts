@@ -10,18 +10,19 @@ import { UsersService } from './../users.service';
 export class ProfileComponent implements OnInit {
 
   infoProfile: any;
+  datos: any
 
   constructor(private localstorageService: LocalStorageService, private usersService: UsersService) { 
 
   }
 
   ngOnInit() {
-    let datos = JSON.parse(this.localstorageService.get('datosLogin'));
-    console.log(datos.idUsuario);
-    console.log(datos.usuario);
-    this.usersService.getUserProfile(datos.idUsuario, datos.usuario).then(res => {
+    this.datos = JSON.parse(this.localstorageService.get('datosLogin'));
+    console.log(this.datos.idUsuario);
+    console.log(this.datos.usuario);
+    this.usersService.getUserProfile(this.datos.idUsuario, this.datos.usuario).then(res => {
       this.infoProfile = res.json();
-      console.log(this.infoProfile);
+      console.log(this.infoProfile)
     });
   }
 
