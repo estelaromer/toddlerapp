@@ -15,7 +15,7 @@
                             <b class="caret fa fa-caret-down"></b>
                         </a>
                         <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Ver perfil</a></li>
+                            <li><a [routerLink]="['/app', 'profile']"><i class="fa fa-caret-right"></i>Ver perfil</a></li>
                             <li><a href="#"><i class="fa fa-caret-right"></i>Editar perfil</a></li>
                         </ul>
                     </li>
@@ -26,8 +26,8 @@
                             <b class="caret fa fa-caret-down"></b>
                         </a>
                         <ul id="submenu-3" class="panel-collapse collapse panel-switch" role="menu">
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Ver Alumnos</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Añadir Alumno</a></li>
+                            <li><a [routerLink]="['/app','alumnos']"><i class="fa fa-caret-right"></i>Ver Alumnos</a></li>
+                            <li><a [routerLink]="['/app','new']"><i class="fa fa-caret-right"></i>Añadir Alumno</a></li>
                         </ul>
                     </li>
                     <li>

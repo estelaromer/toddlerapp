@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'; 
-import { formGroupNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import { Router } from '@angular/router';
 
 declare var jQuery:any;
 declare var $:any;
@@ -12,7 +12,7 @@ declare var $:any;
 })
 export class SidebarComponent implements OnInit {
   searchForm: FormGroup;
-  constructor() { 
+  constructor(private router: Router) { 
     this.searchForm = new FormGroup({
       search: new FormControl('')
     })

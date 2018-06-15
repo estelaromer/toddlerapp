@@ -23,6 +23,7 @@ import { ApphomeComponent } from './apphome/apphome.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsersService } from './users.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { AlumnoslistComponent } from './alumnoslist/alumnoslist.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     NewComponent,
     ApphomeComponent,
     ProfileComponent,
-    SidebarComponent
+    SidebarComponent,
+    AlumnoslistComponent
   ],
   imports: [
     BrowserModule, 

@@ -1,5 +1,5 @@
 .nuevoAlumno{
-    margin-top: 100px;
+    margin-top: 27px;
 }
 .baby-pic-container{
     width: 100px;
@@ -43,4 +43,8 @@ h2{
     font-family: 'Pangolin', sans-serif;
     color: #45322E;
     margin-bottom: 50px;
+}
+
+.error{
+    color: #f00;
 }

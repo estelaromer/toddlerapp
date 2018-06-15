@@ -1,56 +1,55 @@
-<div class="container-fluid">
-  <app-header></app-header>
-  <main>
-    <div class="nuevoAlumno container">
-      <div class="formulario-wrapper">
-        <div class="intro text-center">
-          <h1>Toddler</h1>
-          <h2>Nuevo alumno</h2>
-        </div>
-        <form class="formulario-nuevo" novalidate [formGroup]="newForm" (ngSubmit)="handleNewSubmit(newForm.value)">
-          <div class="form-row">
-            <div class="col-12 col-lg-6">
-              <div class="form-group">
-                <div class="baby-pic-container">
-                 
-                </div>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <div class="form-group">
-                <label>Nombre*</label>
-                <input type="text" class="input form-control form-control-sm" formControlName="nombre" placeholder="Nombre">
-                <small class="error text-left" *ngIf="newForm.controls.nombre.errors?.required && newForm.controls.nombre.dirty">Campo obligatorio</small>
-              </div>
-
-              <div class="form-group">
-                <label>Apellidos*</label>
-                <input type="text" class="input form-control form-control-sm" formControlName="apellidos" placeholder="Apellidos">
-                <small class="error text-left" *ngIf="newForm.controls.apellidos.errors?.required && newForm.controls.apellidos.dirty">Campo obligatorio</small>
-              </div>
-
-              <div class="form-group">
-                <label>Fecha de nacimiento*</label>
-                <input type="date" class="input form-control form-control-sm" formComtrolName="fechaNacimiento">
-              </div>
-
-              <div class="row">
-                <div class="form-group col-6">
-                  <label>Entrada*</label>
-                  <input type="time" class="input form-control form-control-sm" formComtrolName="horaEntrada">
-                </div>
-                <div class="form-group col-6">
-                  <label>Salida*</label>
-                  <input type="time" class="input form-control form-control-sm" formComtrolName="horaSalida">
-                </div>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block" [disabled]="!newForm.valid">Guardar</button>
-          </div>
-        </form>
-      </div>
+<div class="nuevoAlumno container">
+  <div class="formulario-wrapper">
+    <div class="intro text-center">
+      <h1>Toddler</h1>
+      <h2>Nuevo alumno</h2>
     </div>
-  </main>
-  <app-footer></app-footer>
+    <form class="formulario-nuevo" novalidate [formGroup]="newForm" enctype="multipart/form-data" (ngSubmit)="handleNewSubmit(newForm.value)">
+      <div class="form-row">
+        <div class="col-12 col-lg-6">
+          <div class="form-group">
+            <label>Foto</label>
+            <input type="file" class="form-control-file" formControlName="foto">
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="form-group">
+            <label>Código*</label>
+            <input type="text" class="input form-control form-control-sm" formControlName="codigoAlumno" placeholder="Código">
+            <small class="error text-left" *ngIf="newForm.controls.codigoAlumno.errors?.required && newForm.controls.codigoAlumno.dirty">Campo obligatorio</small>
+            <small class="error text-left" *ngIf="codigoIncorrecto">Código incorrecto</small>
+          </div>
+          <div class="form-group">
+            <label>Nombre*</label>
+            <input type="text" class="input form-control form-control-sm" formControlName="nombre" placeholder="Nombre">
+            <small class="error text-left" *ngIf="newForm.controls.nombre.errors?.required && newForm.controls.nombre.dirty">Campo obligatorio</small>
+          </div>
+
+          <div class="form-group">
+            <label>Apellidos*</label>
+            <input type="text" class="input form-control form-control-sm" formControlName="apellidos" placeholder="Apellidos">
+            <small class="error text-left" *ngIf="newForm.controls.apellidos.errors?.required && newForm.controls.apellidos.dirty">Campo obligatorio</small>
+          </div>
+
+          <div class="form-group">
+            <label>Fecha de nacimiento*</label>
+            <input type="date" class="input form-control form-control-sm" formControlName="fechaNacimiento">
+          </div>
+
+          <div class="row">
+            <div class="form-group col-6">
+              <label>Entrada*</label>
+              <input type="time" class="input form-control form-control-sm" formControlName="horaEntrada">
+            </div>
+            <div class="form-group col-6">
+              <label>Salida*</label>
+              <input type="time" class="input form-control form-control-sm" formControlName="horaSalida">
+            </div>
+          </div>
+        </div>
+        <small class="error text-left" *ngIf="problemaRegistro">No hemos podido añadir los datos del alumno.</small>
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="!newForm.valid">Guardar</button>
+      </div>
+    </form>
+  </div>
 </div>

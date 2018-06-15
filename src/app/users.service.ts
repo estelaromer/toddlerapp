@@ -30,5 +30,17 @@ export class UsersService {
   getUserProfile(pId, pUsuario){
     return this.http.post(`http://localhost:3000/api/fetch/${pId}`, {param1: pUsuario}).toPromise();
   }
+
+  newAlumno(pdatosRegistro){
+    return this.http.post ('http://localhost:3000/api/alumnos/create', {pdatosRegistro}).toPromise();
+  }
+
+  getAlumnos(pId, pUsuario) {
+    let datos = {
+      idUsuario: pId,
+      tipoUsuario: pUsuario
+    }
+    return this.http.post('http://localhost:3000/api/alumnos/fetch', {datos}).toPromise();
+  }
 }
 

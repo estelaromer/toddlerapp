@@ -1,37 +1,18 @@
-<app-header></app-header>
-<div class="profile container-fluid">
+
+<div class="profile card container">
   <div class="row">
-    <div class="col-12 col-sm-3">
-      <div *ngIf="!infoProfile?.foto" class="profile-pic-placeholder"><img width="100" src="./../../assets/img/profile-placeholder.png" alt=""></div>
-      <div *ngIf="infoProfile?.foto" class="profile-pic-placeholder"><img width="100" src="{{infoProfile?.foto}}" alt=""></div>
+    <div class="col-12 col-md-4">
+        <img *ngIf="!infoProfile?.foto" class ="card-img-top" src="./../../assets/img/profile-placeholder.png" alt="">
+        <img *ngIf="infoProfile?.foto" class="card-img-top" src="{{infoProfile?.foto}}" alt="Card image cap">
+    </div>
+    <div class="col-12 col-md-8">
+        <div class="card-body">
+            <h5 class="card-title">{{infoProfile?.nombre}} {{infoProfile?.apellidos}}</h5>
+            <p class="card-text"><i class="fas fa-at"></i> {{infoProfile?.email}}</p>
+            <p class="card-text"><i class="fas fa-mobile-alt"></i> {{infoProfile?.telefono}}</p>
+            <p class="card_text"><i class="fas fa-home"></i></p>
+            <a href="#" class="btn btn-primary">Editar</a>
+          </div>
     </div>
   </div>
 </div>
-
-<ul>
-  <li>{{infoProfile?.nombre}} {{infoProfile?.apellidos}}</li>
-  <li>{{infoProfile?.email}}</li>
-  <li>{{infoProfile?.telefono}}
-</ul>
-<div *ngIf="infoProfile?.alumnos">
-    <div *ngFor="let alumno of infoProfile?.alumnos">
-      <ul>
-        <li>{{alumno.nombre}} {{alumno.apellidos}}</li>
-        <li>{{alumno.clase}}</li>
-        <li>{{alumno.centro}}</li>
-      </ul>
-    </div>
-</div>
-
-<div *ngIf="infoProfile?.clases">
-    <div *ngFor="let clase of infoProfile?.clases">
-      <ul>
-        <li>{{clase.clase}}</li>
-        <li>{{clase.centro}}</li>
-      </ul>
-    </div>
-</div>
-
-
-<a *ngIf="datos.usuario === 'familiares'">Añadir alumno</a>
-<a *ngIf="datos.usuario === 'educadores'">Añadir clase</a>
